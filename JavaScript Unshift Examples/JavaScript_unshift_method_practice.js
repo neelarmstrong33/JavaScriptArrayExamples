@@ -40,7 +40,7 @@ days.unshift(...weekends);
 console.log(days);
 */
 
-
+/*
 //Example 5 : JavaScript Array Unshift() method with array like object.
 let greetings = {
     0: 'Hi',
@@ -56,3 +56,20 @@ let greetings = {
 greetings.prepend('Good day');
 
 console.log(greetings);
+*/
+
+
+// Example 6 : JavaScript Array Unshift() method with array like object while passing multiple elements.
+let greetings = {
+    0: 'Hi',
+    1: 'Hello',
+    2: 'Howdy',
+    length: 3,
+    prepend(...messages) {
+      [].unshift.call(this, ...messages);
+      return this.length;
+    },
+  };
+  
+  greetings.prepend('Good day', 'Bye');
+  console.log(greetings);
